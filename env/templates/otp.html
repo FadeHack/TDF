@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 col-sm-8 col-xs-12">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <form method="POST" action="/otp">
+                        <h3 class="text-center mb-4">Enter OTP</h3>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in messages %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                        <div class="form-group">
+                            {% if block_input %}
+                                <input type="text" class="form-control" id="otpRead" name="OTP" placeholder="OTP" required readonly>
+                            {% else %}
+                                <input type="text" class="form-control" id="otpType" name="OTP" placeholder="OTP" required>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {% if block_input %}
+                            <button type="submit" class="btn btn-primary btn-block" disabled>Verify OTP</button>
+                            {% else %}
+                            <button type="submit" class="btn btn-primary btn-block">Verify OTP</button>
+                            {% endif %}
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

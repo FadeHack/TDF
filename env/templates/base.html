@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Truecaller API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <!-- css template from the web -->
+    <style media="screen">
+
+
+
+p {
+  align: center;
+}
+
+.container{
+  display:grid;
+  grid-template-rows: 40%, 50%;
+}
+
+.singleTable{
+  table-layout:auto scroll;
+  background-color: whitesmoke;
+
+}
+
+.tabCol{
+  border: 1px solid black;
+  align-content: center;
+  text-align: center;
+}
+
+/* CSS */
+input[type=file]{
+  border-radius: 30%;
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  align-content: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+  background-color: #398AB9;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: #398AB9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=file]:hover {
+  background-color: #45a049;
+}
+
+button {
+  width: 20%;
+  background-color: #398AB9;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button :hover {
+  background-color: #45a049;
+}
+.form div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+    h1.main_title{
+
+      text-align: center;
+      animation-name: pop;
+      animation-duration: 1.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      font-family: "Bungee Shade";
+      font-size: 100px;
+      color: #1A1A40;
+
+
+    }
+    h1.title{
+
+      text-align: center;
+      animation-name: pop;
+      animation-duration: 1.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      font-family: "Sacramento";
+      font-size: 100px;
+
+    }
+    h2.subtitle{
+     font-family: "Roboto Slab";
+
+    }
+    @keyframes pop {
+      0% { opacity: 0 }
+      100% {opacity: 1 }
+      from,
+      20%,
+      53%,
+      to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      40%,
+      43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -30px, 0) scaleY(1.1);
+        transform: translate3d(0, -30px, 0) scaleY(1.1);
+      }
+
+      70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -15px, 0) scaleY(1.05);
+        transform: translate3d(0, -15px, 0) scaleY(1.05);
+      }
+
+      80% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0) scaleY(0.95);
+        transform: translate3d(0, 0, 0) scaleY(0.95);
+      }
+
+      90% {
+        -webkit-transform: translate3d(0, -4px, 0) scaleY(1.02);
+        transform: translate3d(0, -4px, 0) scaleY(1.02);
+      }
+    }
+  table {
+	width:100%;
+	border:1px solid $color-form-highlight;
+  background-color: #ECB390;
+  font-family:  "Roboto Slab";
+  text-align: center;
+}
+table td{
+  text-align: center;
+  padding: 5px;
+font-weight: lighter;
+}
+
+ table-header {
+	display:flex;
+	width:100%;
+	padding:($half-spacing-unit * 1.5) 0;
+  text-align:center;
+}
+
+ table-row {
+	display:flex;
+	width:100%;
+	padding:($half-spacing-unit * 1.5) 0;
+
+	&:nth-of-type(odd) {
+		background: $color-form-highlight;
+	}
+}
+
+table-data, header__item {
+	flex: 1 1 20%;
+	text-align:center;
+
+
+}
+
+</style>
+</head>
+
+<body>
+<section class="hero is-fullheight" style="background-color:#C4FCEF;">
+
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="{{ url_for('main.index') }}" class="navbar-item">
+                            Home
+                        </a>
+                        {% if current_user.is_authenticated %}
+                        <!-- shows if login is done -->
+                        <a href="{{ url_for('main.profile') }}" class="navbar-item">
+                            Profile
+                        </a>
+                        {% endif %}
+
+                        {% if not current_user.is_authenticated %}
+                        <!-- shows log in option if not logged in -->
+                        <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                            Login
+                        </a>
+                        <!-- <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                            Sign Up
+                        </a> -->
+                        {% endif %}
+                        {% if current_user.is_authenticated %}
+                        <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                            Logout
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

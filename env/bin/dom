@@ -1,0 +1,7 @@
+#!/mnt/c/users/goyal/Downloads/GPCSSI_truecaller_webapp/GPCSSI_truecaller_webapp/env/bin/python
+
+from domainr import Domain
+
+
+if __name__ == '__main__':
+    Domain().main()

@@ -1,0 +1,9 @@
+flask
+flask-sqlalchemy
+flask-login
+werkzeug
+pandas
+openpyxl
+phonenumbers
+requests
+truecallerpy

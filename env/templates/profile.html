@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Welcome, {{name}}!
+</h1>
+<div class="container">
+    <div class ="left">
+        <h2 class="subtitle">
+            select xlsx file with numbers to be searched.
+            </h2>
+            <form action = "data" method = "POST"
+                  enctype = "multipart/form-data">
+                  <p>
+                <input  type = "file" name = "upload" value= "" >
+                <!-- name is uplaod which is used in app.py as POST -->
+                </p>
+                <input type ="submit" name ="submit" value ="view">
+                <input type = "submit" name="submit" value= "submit" >
+                <!-- when submit button is clicked the def trial is initiated -->
+            </form>
+    </div>
+
+    <div class="right">
+        <h2 class="subtitle">
+            Enter a single number to search:
+        </h2>
+        <form action="singleNumber" method="POST">
+            <p>
+                <input type="tel" name="search_number">
+            </p>
+            <input type="submit" name="submit" value="Search">
+        </form>
+        
+        {% if json_data and json_data['data'] %}
+        <h2 class="subtitle">JSON data:</h2>
+        <table class="singleTable">
+            {% for item in json_data['data'] %}
+
+                {% if item['error'] %}
+                    <tr>
+                            <td class ='tabCol'>Error:</td>
+                            <td class ='tabCol'>{{ item['error'] }}</td>
+                    </tr>
+                {% endif %}
+    
+                {% if item %}
+                    <tr>
+                        <td class ='tabCol'>ID:</td>
+                        <td class ='tabCol'>{{ item['id'] }}</td>
+                    </tr>
+                    <tr>
+                        <td class ='tabCol'>Name:</td>
+                        <td class ='tabCol'>{{ item['name'] }}</td>
+                    </tr>
+                    <tr>
+                        <td class ='tabCol'>Score:</td>
+                        <td class ='tabCol'>{{ item['score'] }}</td>
+                    </tr>
+                    {% if item['image'] %}
+                        <tr>
+                            <td class ='tabCol'>Photos:</td>
+                            <td class ='tabCol'>
+                                <img src="{{ item['image'] }}" alt="Photo">
+                            </td>
+                        </tr>
+                    {% endif %}
+    
+                    <tr>
+                        <td class ='tabCol'>Access:</td>
+                        <td class ='tabCol'>{{ item['access'] }}</td>
+                    </tr>
+    
+                    <tr>
+                        <td class ='tabCol'>Phones:</td>
+                        <td class ='tabCol'>                    
+                            <ul>
+                                {% for phone in item['phones'] %}
+                                    <li>{{ phone['e164Format'] }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class ='tabCol'>Addresses :</td>
+                        <td class ='tabCol'>
+                            <ul>
+                                {% for address in item['addresses'] %}
+                                    <li>{{ address['city'] }}, {{ address['countryCode'] }}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data available</p>
+    {% endif %}
+    
+        
+        
+    </div>
+</div>
+
+
+{% endblock %}

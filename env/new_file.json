@@ -1,0 +1,10 @@
+{
+    "status": 9,
+    "message": "Secret token pending",
+    "domain": "noneu",
+    "parsedPhoneNumber": 919999999999,
+    "parsedCountryCode": "IN",
+    "requestId": "47489012-ea13-4de3-a910-1a6fe63c0292",
+    "method": "sms",
+    "tokenTtl": 228
+}

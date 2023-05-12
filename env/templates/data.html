@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    </h2>
+    {{data | safe }}
+</h1>
+<a class="btn btn-success" href="{{url_for('main.download')}}"> <button>Download</button></a>
+{% endblock %}

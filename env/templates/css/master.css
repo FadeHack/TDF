@@ -1,0 +1,26 @@
+h1{
+
+  font-weight: lighter;
+  text-align: center;
+  font-family:  "Sacramento", cursive;
+  background-color: white;
+  border-radius: 50px;
+  font-size: 80px;
+  text-shadow:
+    -3px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+table td{
+  text-align: center;
+  color: black;
+  text-align: center;
+  border-radius: 50px;
+font-size: 25px;
+font-family: sans;
+font-weight: lighter;
+}
+table tr :hover{
+  background-color: pink;
+}
