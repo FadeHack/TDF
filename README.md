@@ -34,7 +34,7 @@ Bulk number search page allowing users to upload a file containing multiple phon
 Single number search page where users can enter a phone number for detailed information retrieval.
 
 ## How to Run
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone https://github.com/FadeHack/TDF`
 2. Navigate to the `env` folder: `cd env`
 3. Run the main Python file: `python main.py`
 4. Access the application in your web browser at: `http://localhost:5000/`
