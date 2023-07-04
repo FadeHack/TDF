@@ -12,6 +12,7 @@ The Truecaller Data Fetcher is a Flask web application that utilizes the Truecal
 
 ## Screenshots
 
+
 ### Home
 ![Home](screenshots/home.png)
 Home page of the Truecaller Data Fetcher web application.
